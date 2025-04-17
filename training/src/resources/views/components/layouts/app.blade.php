@@ -47,12 +47,12 @@
 <body>
 
 <!-- navigation -->
-{{-- <header class="navigation bg-tertiary">
+<header class="navigation bg-tertiary">
 	<nav class="navbar navbar-expand-xl navbar-light text-center py-3">
 		<div class="container">
 			<a class="navbar-brand" href="{{ route ('home') }}">
 				<img loading="prelaod" decoding="async" class="img-fluid" width="160" src="{{ asset ('front/images/logo.png') }}" alt="Wallet">
-                PemWeb
+                <!--PemWeb-->
 			</a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
 			</button>
@@ -62,34 +62,7 @@
 			</div>
 		</div>
 	</nav>
-</header> --}}
-@php
-    $menuItems = \App\Models\MenuItem::where('visible', true)->orderBy('order')->get();
-@endphp
-
-<header class="navigation bg-tertiary">
-    <nav class="navbar navbar-expand-xl navbar-light text-center py-3">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">PemWeb</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                    @foreach ($menuItems as $item)
-                            <li class="nav-item">
-                                <a wire:click.prevent="showServices({{ $item->id }})" class="nav-link" href="">
-                                    {{ $item->title }}
-                                </a>
-                            </li>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </nav>
 </header>
-
 <!-- /navigation -->
 
 {{ $slot }}

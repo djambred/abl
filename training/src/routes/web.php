@@ -17,7 +17,4 @@ Livewire::setScriptRoute(function ($handle) {
 /*
 / END
 */
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/', ShowHomePage::class)->name('home');
+Route::get('/', ShowHomePage::class )->name('home');
