@@ -17,4 +17,5 @@ Livewire::setScriptRoute(function ($handle) {
 /*
 / END
 */
+
 Route::get('/', ShowHomePage::class )->name('home');
